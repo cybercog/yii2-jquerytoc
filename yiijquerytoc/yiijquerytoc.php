@@ -27,6 +27,11 @@ class yiijquerytoc extends BaseWidget
 	 * @var array the HTML attributes for the widget container tag.
 	 */
 	public $options = array();
+	
+	/**
+	* @param scope the DOM element to check for headings, default is document.body
+	*/	
+	public $scope = 'document.body';
 
 	/**
 	 * @var array the HTML attributes for the widget container tag.
@@ -45,14 +50,7 @@ class yiijquerytoc extends BaseWidget
 		//checks for the element id
 		if (!isset($this->options['id'])) {
 			$this->options['id'] = $this->getId();
-		}
-
-		/**
-		* @param scope the DOM element to check for headings, default is document.body
-		*/
-		if (!isset($this->options['scope'])) {
-			$this->options['scope'] = 'document.body';
-		}
+		}		
 
 		/**
 		* @param startLevel the heading to start with, default is 1
@@ -94,7 +92,7 @@ class yiijquerytoc extends BaseWidget
 	protected function registerPlugin()
 	{		
 		$id = $this->options['id'];
-		$scope = $this->options['scope'];
+		$scope = $this->scope;
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
@@ -103,7 +101,7 @@ class yiijquerytoc extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "$('#$id').tableOfContents($scope,$cleanOptions)";
+		$js[] = "$('#$id').tableOfContents('$scope',$cleanOptions)";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
