@@ -50,8 +50,8 @@ class yiijquerytoc extends BaseWidget
 		/**
 		* @param scope the DOM element to check for headings, default is document.body
 		*/
-		if (!isset($this->clientOptions['scope'])) {
-			$this->clientOptions['scope'] = 'document.body';
+		if (!isset($this->options['scope'])) {
+			$this->options['scope'] = 'document.body';
 		}
 
 		/**
@@ -94,6 +94,7 @@ class yiijquerytoc extends BaseWidget
 	protected function registerPlugin()
 	{		
 		$id = $this->options['id'];
+		$scope = $this->options['scope'];
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
@@ -102,7 +103,7 @@ class yiijquerytoc extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "$('#$id').tableOfContents(null,$cleanOptions)";
+		$js[] = "$('#$id').tableOfContents($scope,$cleanOptions)";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
