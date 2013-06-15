@@ -67,6 +67,13 @@ class yiijquerytoc extends BaseWidget
 		if (!isset($this->clientOptions['depth'])) {
 			$this->clientOptions['depth'] = '3';
 		}
+		
+		/**
+		* @param topLinks on how deep the heading will be cared about, default is true
+		*/
+		if (!isset($this->clientOptions['topLinks'])) {
+			$this->clientOptions['topLinks'] = true;
+		}
 
 	}
 
