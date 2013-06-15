@@ -7,9 +7,6 @@ return array(
 			'js/jquery.tableofcontents.js',
 		),
 		'css' => array(
-		),
-		'depends'=>array(
-			'jquery'
 		)
 	)
 );
