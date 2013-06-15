@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'yiiJQueryTOC/core' => array(
+	'yii-jquery-toc/core' => array(
 		'sourcePath' => __DIR__ . '/assets',
 		'js' => array(
 			'js/jquery.tableofcontents.js',

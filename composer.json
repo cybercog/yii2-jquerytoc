@@ -14,13 +14,13 @@
 		}
 	],
 	"support": {
-		"source": "https://github.com/philippfrenzel/yiiJQueryTOC"
+		"source": "https://github.com/philippfrenzel/yii-yquery-toc"
 	},
 	"minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yiiJQueryTOC\\": "/" }
+		"psr-0": { "yii-jquery-toc\\": "/" }
 	}
 }

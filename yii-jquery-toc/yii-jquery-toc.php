@@ -20,7 +20,7 @@ use yii\base\View;
 use yii\helpers\Json;
 use yii\base\Widget as BaseWidget;
 
-class Widget extends BaseWidget
+class yii-jquery-toc extends BaseWidget
 {
 	/**
 	 * @var array the HTML attributes for the widget container tag.
@@ -89,7 +89,7 @@ class Widget extends BaseWidget
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
-		$view->registerAssetBundle("yiiJQueryTOC/core");
+		$view->registerAssetBundle("yii-jquery-toc/core");
 
 		$js = array();
 		
