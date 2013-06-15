@@ -13,14 +13,14 @@
  * @license Open Sourced under the MIT License
  */
 
-namespace yii-jquery-toc;
+namespace yiijquerytoc;
 
 use Yii;
 use yii\base\View;
 use yii\helpers\Json;
 use yii\base\Widget as BaseWidget;
 
-class yii-jquery-toc extends BaseWidget
+class yiijquerytoc extends BaseWidget
 {
 	/**
 	 * @var array the HTML attributes for the widget container tag.
@@ -89,7 +89,7 @@ class yii-jquery-toc extends BaseWidget
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
-		$view->registerAssetBundle("yii-jquery-toc/core");
+		$view->registerAssetBundle("yiijquerytoc/core");
 
 		$js = array();
 		
