@@ -50,14 +50,14 @@ class yiijquerytoc extends BaseWidget
 		/**
 		* @param scope the DOM element to check for headings, default is document.body
 		*/
-		if (!isset($this->options['scope'])) {
+		if (!isset($this->clientOptions['scope'])) {
 			$this->clientOptions['scope'] = 'document.body';
 		}
 
 		/**
 		* @param startLevel the heading to start with, default is 1
 		*/
-		if (!isset($this->options['startLevel'])) {
+		if (!isset($this->clientOptions['startLevel'])) {
 			$this->clientOptions['startLevel'] = '1';
 		}
 
