@@ -1,5 +1,5 @@
 {
-	"name": "philippfrenzel/yii-jquery-toc",
+	"name": "philippfrenzel/yiijquerytoc",
 	"description": "Yii2 JQueryTOC",
 	"keywords": ["yii", "framework","TOC","JQuery"],
 	"homepage": "http://www.frenzel.net/",
@@ -14,13 +14,13 @@
 		}
 	],
 	"support": {
-		"source": "https://github.com/philippfrenzel/yii-yquery-toc"
+		"source": "https://github.com/philippfrenzel/yiiyquerytoc"
 	},
 	"minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yii-jquery-toc\\": "/" }
+		"psr-0": { "yiijquerytoc\\": "/" }
 	}
 }
