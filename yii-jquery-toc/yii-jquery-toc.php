@@ -13,7 +13,7 @@
  * @license Open Sourced under the MIT License
  */
 
-namespace yiiJQueryTOC;
+namespace yii-jquery-toc;
 
 use Yii;
 use yii\base\View;
