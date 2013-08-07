@@ -103,7 +103,7 @@ class yiijquerytoc extends BaseWidget
 		
 		//get the displayed view and register the needed assets
 		$view = $this->getView();
-		$view->registerAssetBundle("yiijquerytoc/core");
+		$view->registerAssetBundle("yiijquerytoc/CoreAsset");
 
 		$js = array();
 		
