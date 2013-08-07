@@ -100,11 +100,12 @@ class yiijquerytoc extends BaseWidget
 	{		
 		$id = $this->options['id'];
 		$scope = $this->scope;
-		
-		//get the displayed view and register the needed assets
 		$view = $this->getView();
-		$view->registerAssetBundle("yiijquerytoc/CoreAsset");
 
+		/** @var \yii\web\AssetBundle $assetClass */
+		$assetClass = 'yiijquerytoc\\CoreAsset';
+		$assetClass::register($view);
+		
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
