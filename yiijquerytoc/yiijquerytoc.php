@@ -8,8 +8,8 @@
  *
  *
  * Jquery Script from
- * @author Doug Neiner
- * @link http://fuelyourcoding.com/scripts/toc/
+ * @author @gregfranko
+ * @link http://gregfranko.com/jquery.tocify.js/
  * @license Open Sourced under the MIT License
  */
 
@@ -29,9 +29,15 @@ class yiijquerytoc extends BaseWidget
 	public $options = array();
 	
 	/**
-	* @param scope the DOM element to check for headings, default is document.body
+	* @param context the DOM element to check for headings, default is document.body
 	*/	
-	public $scope = 'document.body';
+	public $context = 'body';
+
+	/**
+	 * default theme for the tocify
+	 * @var string
+	 */
+	public $theme = 'bootstrap';
 
 	/**
 	 * @var array the HTML attributes for the widget container tag.
@@ -50,34 +56,6 @@ class yiijquerytoc extends BaseWidget
 		//checks for the element id
 		if (!isset($this->options['id'])) {
 			$this->options['id'] = $this->getId();
-		}		
-
-		/**
-		* @param startLevel the heading to start with, default is 1
-		*/
-		if (!isset($this->clientOptions['startLevel'])) {
-			$this->clientOptions['startLevel'] = '1';
-		}
-
-		/**
-		* @param depth on how deep the heading will be cared about, default is 3
-		*/
-		if (!isset($this->clientOptions['depth'])) {
-			$this->clientOptions['depth'] = '3';
-		}
-		
-		/**
-		* @param topLinks on how deep the heading will be cared about, default is true
-		*/
-		if (!isset($this->clientOptions['topLinks'])) {
-			$this->clientOptions['topLinks'] = true;
-		}
-		
-		/**
-		* @param topLinks on how deep the heading will be cared about, default is true
-		*/
-		if (!isset($this->clientOptions['topBodyId'])) {
-			$this->clientOptions['topBodyId'] = $this->options['id'];
 		}
 
 	}
@@ -99,7 +77,17 @@ class yiijquerytoc extends BaseWidget
 	protected function registerPlugin()
 	{		
 		$id = $this->options['id'];
-		$scope = $this->scope;
+
+		//checks for the element id
+		if (!isset($this->clientOptions['context'])) {
+			$this->clientOptions['context'] = $this->context;
+		}
+
+		//checks for the element id
+		if (!isset($this->clientOptions['theme'])) {
+			$this->clientOptions['theme'] = $this->theme;
+		}
+
 		$view = $this->getView();
 
 		/** @var \yii\web\AssetBundle $assetClass */
@@ -109,7 +97,7 @@ class yiijquerytoc extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "$('#$id').tableOfContents('$scope',$cleanOptions)";
+		$js[] = "$('#$id').tocify($cleanOptions)";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}

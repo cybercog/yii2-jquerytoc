@@ -12,10 +12,12 @@ class CoreAsset extends AssetBundle
 {
     public $sourcePath = '@yiijquerytoc/assets';
     public $css = array(
+      'css/jquery.tocify.css'
     );
     public $js = array(
-        'js/jquery.tableofcontents.js'
+        'js/jquery.tocify.min.js'
     );
     public $depends = array(
+      'yii\jui\CoreAsset',
     );
 }
