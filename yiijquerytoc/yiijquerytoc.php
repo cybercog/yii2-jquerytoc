@@ -58,6 +58,11 @@ class yiijquerytoc extends BaseWidget
 			$this->options['id'] = $this->getId();
 		}
 
+		//checks for the element id
+		if (!isset($this->options['class'])) {
+			$this->options['class'] = 'tocify';
+		}
+
 	}
 
 	/**
