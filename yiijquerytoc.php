@@ -96,8 +96,7 @@ class yiijquerytoc extends BaseWidget
 		$view = $this->getView();
 
 		/** @var \yii\web\AssetBundle $assetClass */
-		$assetClass = 'CoreAsset';
-		$assetClass::register($view);
+		CoreAsset::register($view);
 		
 		$js = array();
 		
