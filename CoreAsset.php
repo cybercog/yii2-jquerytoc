@@ -4,7 +4,7 @@
  * @author Philipp Frenzel <philipp@frenzel.net> 
  */
 
-namespace yiijquerytoc;
+namespace philippfrenzel\yiijquerytoc;
 
 use yii\web\AssetBundle;
 

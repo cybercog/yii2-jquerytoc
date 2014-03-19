@@ -13,7 +13,7 @@
  * @license Open Sourced under the MIT License
  */
 
-namespace yiijquerytoc;
+namespace philippfrenzel\yiijquerytoc;
 
 use Yii;
 use yii\web\View;
@@ -96,7 +96,7 @@ class yiijquerytoc extends BaseWidget
 		$view = $this->getView();
 
 		/** @var \yii\web\AssetBundle $assetClass */
-		$assetClass = 'yiijquerytoc\\CoreAsset';
+		$assetClass = 'CoreAsset';
 		$assetClass::register($view);
 		
 		$js = array();
