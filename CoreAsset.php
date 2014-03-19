@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 
 class CoreAsset extends AssetBundle
 {
-    public $sourcePath = '@yiijquerytoc/assets';
+    public $sourcePath = '@philippfrenzel/yiijquerytoc/assets';
     public $css = array(
       'css/jquery.tocify.css'
     );

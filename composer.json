@@ -21,9 +21,7 @@
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-0": { "yiijquerytoc\\": "/" }
+		"psr-0": { "philippfrenzel\\yiijquerytoc\\": "" }
 	},
-	"extra": {
-          "bootstrap": "yiijquerytoc\\Extension"
-  }
+	"target-dir": "philippfrenzel/yiijquerytoc"
 }
