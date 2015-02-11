@@ -4,13 +4,13 @@
  * @author Philipp Frenzel <philipp@frenzel.net> 
  */
 
-namespace philippfrenzel\yiijquerytoc;
+namespace yii2jquerytoc;
 
 use yii\web\AssetBundle;
 
 class CoreAsset extends AssetBundle
 {
-    public $sourcePath = '@philippfrenzel/yiijquerytoc/assets';
+    public $sourcePath = '@yii2jquerytoc/assets';
     public $css = array(
       'css/jquery.tocify.css'
     );
@@ -18,6 +18,6 @@ class CoreAsset extends AssetBundle
         'js/jquery.tocify.min.js'
     );
     public $depends = array(
-      'yii\jui\CoreAsset',
+        'yii\jui\JuiAsset',
     );
 }

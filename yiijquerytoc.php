@@ -13,7 +13,7 @@
  * @license Open Sourced under the MIT License
  */
 
-namespace philippfrenzel\yiijquerytoc;
+namespace yii2jquerytoc;
 
 use Yii;
 use yii\web\View;
@@ -26,7 +26,7 @@ class yiijquerytoc extends BaseWidget
 	/**
 	 * @var array the HTML attributes for the widget container tag.
 	 */
-	public $options = array();
+	public $options = [];
 	
 	/**
 	* @param context the DOM element to check for headings, default is document.body
@@ -42,7 +42,7 @@ class yiijquerytoc extends BaseWidget
 	/**
 	 * @var array the HTML attributes for the widget container tag.
 	 */
-	public $clientOptions = array();
+	public $clientOptions = [];
 
 
 	/**
@@ -51,8 +51,6 @@ class yiijquerytoc extends BaseWidget
 	 */
 	public function init()
 	{
-		parent::init();
-		
 		//checks for the element id
 		if (!isset($this->options['id'])) {
 			$this->options['id'] = $this->getId();
@@ -62,7 +60,8 @@ class yiijquerytoc extends BaseWidget
 		if (!isset($this->options['class'])) {
 			$this->options['class'] = 'tocify';
 		}
-
+		
+		parent::init();
 	}
 
 	/**
@@ -101,7 +100,7 @@ class yiijquerytoc extends BaseWidget
 		$js = array();
 		
 		$cleanOptions = Json::encode($this->clientOptions);
-		$js[] = "$('#$id').tocify($cleanOptions)";
+		$js[] = "$(function() {var toc$id = $('#$id').tocify($cleanOptions)});";
 		
 		$view->registerJs(implode("\n", $js),View::POS_READY);
 	}
